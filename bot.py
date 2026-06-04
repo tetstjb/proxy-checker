@@ -1,4 +1,5 @@
 import os
+import sys
 import asyncio
 import aiohttp
 from aiohttp_socks import ProxyConnector
@@ -10,6 +11,8 @@ CONCURRENT_SPEEDTESTS = 3
 
 user_data_store = {}
 speedtest_sem = asyncio.Semaphore(CONCURRENT_SPEEDTESTS)
+
+print("Python Version:", sys.version)
 
 async def check_proxy(proxy):
     try:
